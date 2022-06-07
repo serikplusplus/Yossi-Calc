@@ -1,8 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
-	@@include('html\head.html',{ "title":"Main Page", "description":"", "keywords":"", "nameSite":"",
-	})
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+			crossorigin="anonymous"
+		/>
+		<link href="css/style.css" rel="stylesheet" />
+	</head>
 	<body>
-		@@include('html/footer.html')
+		<div class="container">
+			<div class="app" id="app">
+				<div class="row buttons-grup" v-if="renderAnswer === 'types'">
+					<div class="col-6">
+						<div class="btn-group btn-group-lg" role="group" aria-label="Basic outlined example">
+							<template class="btn" v-for="(item, index) in types">
+								<p class="button-wrapper">
+									<input
+										:key="'types'+index"
+										type="checkbox"
+										class="btn-check"
+										:name="'types'+index"
+										:id="item.name"
+										:checked="item.name === userCurrentBranch.type.name"
+										@click="typeCheck(item.name,item)"
+									/>
+									<label class="btn btn-outline-primary btn-full" :for="item.name"
+										>{{item.name}}</label
+									>
+								</p>
+							</template>
+						</div>
+					</div>
+					<div class="col-4 table-statistic" v-for="user in answers">
+						<div class="row" v-for="firstBranch in user.branchs[0]">
+							<p>
+								<span>{{firstBranch.title}} -- </span>
+								<span
+									v-for="(item, index) in getList(user.branchs,firstBranch.title)"
+									:key="index"
+									@click="goTo(index,item.link)"
+								>
+									<template v-if="item.price">{{item.name}} - {{item.price}}$, </template>
+									<template v-else>{{item.name}}, </template>
+								</span>
+							</p>
+						</div>
+						<div class="totalPrice" v-if="user.totalPrice > 0">Total: {{user.totalPrice}}$</div>
+					</div>
+				</div>
+
+				<div class="row buttons-grup" v-if="renderAnswer === 'countries'">
+					<div class="col-8">
+						<div class="btn-group btn-group-lg" role="group" aria-label="Basic outlined example">
+							<template class="btn" v-for="(item, index) in countries">
+								<p class="button-wrapper">
+									<input
+										type="checkbox"
+										class="btn-check"
+										:name="'countries'+index"
+										:id="item.name"
+										:checked="item.name === userCurrentBranch.countries.name"
+										@click="countriesCheck(item.name,item)"
+									/>
+									<label class="btn btn-outline-primary btn-full" :for="item.name"
+										>{{item.name}}</label
+									>
+								</p>
+							</template>
+						</div>
+					</div>
+					<div class="col-4 table-statistic" v-for="user in answers">
+						<div class="row" v-for="firstBranch in user.branchs[0]">
+							<p>
+								<span>{{firstBranch.title}} -- </span>
+								<span
+									v-for="(item, index) in getList(user.branchs,firstBranch.title)"
+									:key="index"
+									@click="goTo(index,item.link)"
+								>
+									<template v-if="item.price">{{item.name}} - {{item.price}}$, </template>
+									<template v-else>{{item.name}}, </template>
+								</span>
+							</p>
+						</div>
+						<div class="totalPrice" v-if="user.totalPrice > 0">Total: {{user.totalPrice}}$</div>
+					</div>
+				</div>
+
+				<div class="row buttons-grup" v-if="renderAnswer === 'clinics'">
+					<div class="col-8">
+						<h2>Select clinics</h2>
+						<div class="btn-group btn-group-lg" role="group" aria-label="Basic outlined example">
+							<template class="btn" v-for="(item, index) in clinics">
+								<p class="button-wrapper">
+									<input
+										type="checkbox"
+										class="btn-check"
+										:name="'clinics'+index"
+										:id="item.name"
+										:checked="item.name === userCurrentBranch.clinics.name"
+										@click="clinicsCheck(item.name,item)"
+									/>
+									<label class="btn btn-outline-primary btn-full" :for="item.name"
+										>{{item.name}}</label
+									>
+								</p>
+							</template>
+						</div>
+					</div>
+					<div class="col-4 table-statistic" v-for="user in answers">
+						<div class="row" v-for="firstBranch in user.branchs[0]">
+							<p>
+								<span>{{firstBranch.title}} -- </span>
+								<span
+									v-for="(item, index) in getList(user.branchs,firstBranch.title)"
+									:key="index"
+									@click="goTo(index,item.link)"
+								>
+									<template v-if="item.price">{{item.name}} - {{item.price}}$, </template>
+									<template v-else>{{item.name}}, </template>
+								</span>
+							</p>
+						</div>
+						<div class="totalPrice" v-if="user.totalPrice > 0">Total: {{user.totalPrice}}$</div>
+					</div>
+				</div>
+				<div class="row buttons-grup" v-if="renderAnswer === 'treaments'">
+					<div class="col-8">
+						<h2>Select Treatment Type:</h2>
+						<div class="btn-group btn-group-lg" role="group" aria-label="Basic outlined example">
+							<template class="btn" v-for="(item, index) in treaments">
+								<p class="button-wrapper">
+									<input
+										type="checkbox"
+										class="btn-check"
+										:name="'treaments'+index"
+										:id="item.name"
+										:checked="item.name === userCurrentBranch.treaments.name"
+										@click="treamentsCheck(item.name,item)"
+									/>
+									<label class="btn btn-outline-primary btn-full" :for="item.name"
+										>{{item.name}}</label
+									>
+								</p>
+							</template>
+						</div>
+					</div>
+					<div class="col-4 table-statistic" v-for="user in answers">
+						<div class="row" v-for="firstBranch in user.branchs[0]">
+							<p>
+								<span>{{firstBranch.title}} -- </span>
+								<span
+									v-for="(item, index) in getList(user.branchs,firstBranch.title)"
+									:key="index"
+									@click="goTo(index,item.link)"
+								>
+									<template v-if="item.price">{{item.name}} - {{item.price}}$, </template>
+									<template v-else>{{item.name}}, </template>
+								</span>
+							</p>
+						</div>
+						<div class="totalPrice" v-if="user.totalPrice > 0">Total: {{user.totalPrice}}$</div>
+					</div>
+				</div>
+				<div class="row buttons-grup" v-if="renderAnswer === 'sub'">
+					<div class="col-8">
+						<h2>Select Sub Treatment:</h2>
+						<div class="btn-group btn-group-lg" role="group" aria-label="Basic outlined example">
+							<select class="form-select" aria-label="Default select example" v-model="subCurrency">
+								<option selected disabled>Currency</option>
+								<option value="$">$ Доллар</option>
+								<option value="€">€ Евро</option>
+								<option value="₴">₴ Гривна</option>
+							</select>
+							<template class="btn" v-for="(item, index) in sub">
+								<p class="button-wrapper">
+									<input
+										type="checkbox"
+										class="btn-check"
+										:name="'sub'+index"
+										:id="item.name"
+										:checked="item.name === userCurrentBranch.sub.name"
+										@click="subCheck(item.name,item.price,item)"
+									/>
+									<label class="btn btn-outline-primary btn-full" :for="item.name"
+										>{{item.name}}<br />{{item.calcPrice}}{{subCurrency}}</label
+									>
+								</p>
+							</template>
+						</div>
+					</div>
+					<div class="col-4 table-statistic" v-for="user in answers">
+						<div class="row" v-for="firstBranch in user.branchs[0]">
+							<p>
+								<span>{{firstBranch.title}} -- </span>
+								<span
+									v-for="(item, index) in getList(user.branchs,firstBranch.title)"
+									:key="index"
+									@click="goTo(index,item.link)"
+								>
+									<template v-if="item.price">{{item.name}} - {{item.price}}$, </template>
+									<template v-else>{{item.name}}, </template>
+								</span>
+							</p>
+						</div>
+						<div class="totalPrice" v-if="user.totalPrice > 0">Total: {{user.totalPrice}}$</div>
+					</div>
+				</div>
+				<div class="row buttons-grup" v-if="renderAnswer === 'extras'">
+					<div class="col-8">
+						<h2>Any Extras?</h2>
+						<div class="btn-group btn-group-lg" role="group" aria-label="Basic outlined example">
+							<template class="btn" v-for="(item, index) in extras">
+								<p class="button-wrapper" v-if="item.price">
+									<input
+										type="checkbox"
+										class="btn-checked"
+										:name="'extras'+index"
+										:id="item.name"
+										:checked="userCurrentBranch.extras.checked[index].isChecked"
+										@click="extrasCheck(item)"
+									/>
+									<label class="btn btn-outline-primary btn-full" :for="item.name"
+										>{{item.name}}<br />{{item.price}}$</label
+									>
+								</p>
+							</template>
+						</div>
+						<div>
+							<button class="btn btn-outline-primary btn-full" @click="extrasNoCheck()">
+								Continue without extras
+							</button>
+						</div>
+					</div>
+					<div class="col-4 table-statistic" v-for="user in answers">
+						<div class="row" v-for="firstBranch in user.branchs[0]">
+							<p>
+								<span>{{firstBranch.title}} -- </span>
+								<span
+									v-for="(item, index) in getList(user.branchs,firstBranch.title)"
+									:key="index"
+									@click="goTo(index,item.link)"
+								>
+									<template v-if="item.price">{{item.name}} - {{item.price}}$, </template>
+									<template v-else>{{item.name}}, </template>
+								</span>
+							</p>
+						</div>
+						<div class="totalPrice" v-if="user.totalPrice > 0">Total: {{user.totalPrice}}$</div>
+					</div>
+				</div>
+				<div class="row buttons-grup" v-if="renderAnswer === 'add-treament'">
+					<div class="col-8">
+						<h2>Additional Treatment?</h2>
+						<div class="btn-group btn-group-lg" role="group" aria-label="Basic outlined example">
+							<template class="btn" v-for="(item, index) in addTreament">
+								<p class="button-wrapper">
+									<input
+										type="checkbox"
+										class="btn-check"
+										:name="'add-treament'+index"
+										:id="'add-treament'+index"
+										:checked="item.name === userCurrentBranch.addTreament.name"
+										@click="treamentCheck(item.name)"
+									/>
+									<label class="btn btn-outline-primary btn-full" :for="'add-treament'+index"
+										>{{item.name}}</label
+									>
+								</p>
+							</template>
+						</div>
+					</div>
+					<div class="col-4 table-statistic" v-for="user in answers">
+						<div class="row" v-for="firstBranch in user.branchs[0]">
+							<p>
+								<span>{{firstBranch.title}} -- </span>
+								<span
+									v-for="(item, index) in getList(user.branchs,firstBranch.title)"
+									:key="index"
+									@click="goTo(index,item.link)"
+								>
+									<template v-if="item.price">{{item.name}} - {{item.price}}$, </template>
+									<template v-else>{{item.name}}, </template>
+								</span>
+							</p>
+						</div>
+						<div class="totalPrice" v-if="user.totalPrice > 0">Total: {{user.totalPrice}}$</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+			crossorigin="anonymous"
+		></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+		<script src="js/app.min.js"></script>
 	</body>
 </html>

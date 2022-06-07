@@ -1,1 +1,914 @@
-<footer></footer>
+
+			<div class="main-container">
+				<div class="content">
+					<div class="form">
+						<div class="form__container">
+							<div class="progress">
+								<div class="progress__nav">
+									<button class="prev-btn">Back</button>
+									<div class="numeric-slide">
+										<span class="numeric-slide__current">3</span>
+										/
+										<span class="numeric-slide__total">16</span>
+									</div>
+								</div>
+								<div class="progress__bar"></div>
+							</div>
+							<h3 class="form__subtitle">Please select Sub Treatment:</h3>
+							<div class="btn__list">
+								<a class="main__btn"
+									><span class="main__btn-name">Dr. channel Opening</span>
+									<span class="main__btn-price">1050$</span></a
+								>
+								<a class="main__btn"
+									><span class="main__btn-name">Dr. channel Opening</span>
+									<span class="main__btn-price">1050$</span></a
+								>
+							</div>
+						</div>
+					</div>
+					<div class="left-section">
+						<div class="currency" @click="currencyCollapse=!currencyCollapse">
+							<p>Currency</p>
+							<button class="currency__btn">{{subCurrency}}</button>
+						</div>
+						<ul class="currency__list" :class="{ show: currencyCollapse }">
+							<li
+								class="currency__list-item"
+								@click="subCurrency='$';currencyCollapse=!currencyCollapse"
+							>
+								<span>Dollar</span>
+								<span>$</span>
+							</li>
+							<li
+								class="currency__list-item"
+								@click="subCurrency='€';currencyCollapse=!currencyCollapse"
+							>
+								<span>Euro</span>
+								<span>€</span>
+							</li>
+						</ul>
+						<div class="info">
+							<div class="info__container">
+								<ul class="info__list">
+									<li class="info__elem">
+										<span class="info__elem__title">Category:</span>
+										<span class="info__elem__name">Hear Transplant</span>
+									</li>
+									<li class="info__elem">
+										<span class="info__elem__title">Country:</span>
+										<span class="info__elem__name">Turkey</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="main-container">
+				<div class="content">
+					<div class="form">
+						<div class="form__container">
+							<div class="progress">
+								<div class="progress__nav">
+									<button class="prev-btn">Back</button>
+									<div class="numeric-slide">
+										<span class="numeric-slide__current">3</span>
+										/
+										<span class="numeric-slide__total">16</span>
+									</div>
+								</div>
+								<div class="progress__bar"></div>
+							</div>
+							<h3 class="form__subtitle">Any Extras?</h3>
+							<div class="btn__list">
+								<a class="main__btn"
+									><span class="main__btn-name">Dr. channel Opening</span>
+									<span class="main__btn-price">1050$</span></a
+								>
+								<a class="main__btn"
+									><span class="main__btn-name">Dr. channel Opening</span>
+									<span class="main__btn-price">1050$</span></a
+								>
+								<a class="main__btn"
+									><span class="main__btn-name">Dr. channel Opening</span>
+									<span class="main__btn-price">1050$</span></a
+								>
+								<a class="main__btn"
+									><span class="main__btn-name">Dr. channel Opening</span>
+									<span class="main__btn-price">1050$</span></a
+								>
+							</div>
+
+							<button class="next-btn">Continue without extras</button>
+						</div>
+					</div>
+					<div class="left-section">
+						<div class="info">
+							<div class="info__container">
+								<ul class="info__list">
+									<li class="info__elem">
+										<span class="info__elem__title">Category:</span>
+										<span class="info__elem__name">Hear Transplant</span>
+									</li>
+									<li class="info__elem">
+										<span class="info__elem__title">Country:</span>
+										<span class="info__elem__name">Turkey</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="main-container">
+				<div class="content">
+					<div class="form">
+						<div class="form__container">
+							<div class="progress">
+								<div class="progress__nav">
+									<button class="prev-btn">Back</button>
+									<div class="numeric-slide">
+										<span class="numeric-slide__current">3</span>
+										/
+										<span class="numeric-slide__total">16</span>
+									</div>
+								</div>
+								<div class="progress__bar"></div>
+							</div>
+							<h3 class="form__subtitle">Additional Treatment?</h3>
+							<div class="btn__list">
+								<a class="main__btn main__btn--big">Yes</a>
+								<a class="main__btn main__btn--big">No</a>
+							</div>
+						</div>
+					</div>
+					<div class="left-section">
+						<div class="info">
+							<div class="info__container">
+								<ul class="info__list">
+									<li class="info__elem">
+										<span class="info__elem__title">Category:</span>
+										<span class="info__elem__name">Hear Transplant</span>
+									</li>
+									<li class="info__elem">
+										<span class="info__elem__title">Country:</span>
+										<span class="info__elem__name">Turkey</span>
+									</li>
+								</ul>
+								<p class="info__total">
+									<span class="info__total__title">Total</span>
+									<span class="info__total__price">1000</span>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="main-container">
+				<div class="content">
+					<div class="form">
+						<div class="form__container">
+							<div class="progress">
+								<div class="progress__nav">
+									<button class="prev-btn">Back</button>
+									<div class="numeric-slide">
+										<span class="numeric-slide__current">3</span>
+										/
+										<span class="numeric-slide__total">16</span>
+									</div>
+								</div>
+								<div class="progress__bar"></div>
+							</div>
+							<h3 class="form__subtitle">Is the treatment for the same customer?</h3>
+							<div class="btn__list">
+								<a class="main__btn">Yes</a>
+								<a class="main__btn">No</a>
+							</div>
+						</div>
+					</div>
+					<div class="left-section">
+						<div class="info">
+							<div class="info__container">
+								<ul class="info__list">
+									<li class="info__elem">
+										<span class="info__elem__title">Category:</span>
+										<span class="info__elem__name">Hear Transplant</span>
+									</li>
+									<li class="info__elem">
+										<span class="info__elem__title">Country:</span>
+										<span class="info__elem__name">Turkey</span>
+									</li>
+								</ul>
+								<p class="info__total">
+									<span class="info__total__title">Total</span>
+									<span class="info__total__price">1000</span>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="main-container">
+				<div class="content">
+					<div class="form">
+						<div class="form__container">
+							<div class="progress">
+								<div class="progress__nav">
+									<button class="prev-btn">Back</button>
+									<div class="numeric-slide">
+										<span class="numeric-slide__current">3</span>
+										/
+										<span class="numeric-slide__total">16</span>
+									</div>
+								</div>
+								<div class="progress__bar"></div>
+							</div>
+							<h3 class="form__subtitle">Please select the customer to add this treatment to</h3>
+							<div class="btn__list">
+								<a class="main__btn main__btn--customer"
+									><span class="main__btn__customer-name">Customer 1</span>
+									<p class="main__btn__customer-plan">Current Treatment Plan:</p>
+									<ul class="main__btn__customer-list">
+										<li class="main__btn__customer-el">Hair Transplant</li>
+										<li class="main__btn__customer-el">Clinic</li>
+										<li class="main__btn__customer-el">FUE-Team</li>
+									</ul></a
+								>
+								<a class="main__btn main__btn--customer"
+									><span class="main__btn__customer-name">Customer 1</span>
+									<p class="main__btn__customer-plan">Current Treatment Plan:</p>
+									<ul class="main__btn__customer-list">
+										<li class="main__btn__customer-el">Hair Transplant</li>
+										<li class="main__btn__customer-el">Clinic</li>
+										<li class="main__btn__customer-el">FUE-Team</li>
+									</ul></a
+								>
+							</div>
+						</div>
+					</div>
+					<div class="left-section">
+						<div class="info">
+							<div class="info__container">
+								<ul class="info__list">
+									<li class="info__elem">
+										<span class="info__elem__title">Category:</span>
+										<span class="info__elem__name">Hear Transplant</span>
+									</li>
+									<li class="info__elem">
+										<span class="info__elem__title">Country:</span>
+										<span class="info__elem__name">Turkey</span>
+									</li>
+								</ul>
+								<p class="info__total">
+									<span class="info__total__title">Total</span>
+									<span class="info__total__price">1000</span>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--! Accomodation? -->
+			<div class="main-container">
+				<div class="content">
+					<div class="form">
+						<div class="form__container">
+							<div class="progress">
+								<div class="progress__nav">
+									<button class="prev-btn">Back</button>
+									<div class="numeric-slide">
+										<span class="numeric-slide__current">3</span>
+										/
+										<span class="numeric-slide__total">16</span>
+									</div>
+								</div>
+								<div class="progress__bar"></div>
+							</div>
+							<h3 class="form__subtitle">Accomodation?</h3>
+							<div class="btn__list">
+								<a class="main__btn">Yes</a>
+								<a class="main__btn">No</a>
+							</div>
+						</div>
+					</div>
+					<div class="left-section">
+						<div class="info">
+							<div class="info__container">
+								<ul class="info__list">
+									<li class="info__elem">
+										<span class="info__elem__title">Category:</span>
+										<span class="info__elem__name">Hear Transplant</span>
+									</li>
+									<li class="info__elem">
+										<span class="info__elem__title">Country:</span>
+										<span class="info__elem__name">Turkey</span>
+									</li>
+								</ul>
+								<p class="info__total">
+									<span class="info__total__title">Total</span>
+									<span class="info__total__price">1000</span>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Please Choose Room Type: -->
+			<div class="main-container">
+				<div class="content">
+					<div class="form">
+						<div class="form__container">
+							<div class="progress">
+								<div class="progress__nav">
+									<button class="prev-btn">Back</button>
+									<div class="numeric-slide">
+										<span class="numeric-slide__current">3</span>
+										/
+										<span class="numeric-slide__total">16</span>
+									</div>
+								</div>
+								<div class="progress__bar"></div>
+							</div>
+							<h3 class="form__subtitle">Please Choose Room Type:</h3>
+							<div class="btn__list">
+								<a class="main__btn main__btn--big">Single</a>
+								<a class="main__btn main__btn--big">Double</a>
+								<a class="main__btn main__btn--big"> Triple</a>
+								<a class="main__btn main__btn--big"> Other</a>
+							</div>
+						</div>
+					</div>
+					<div class="left-section">
+						<div class="info">
+							<div class="info__container">
+								<ul class="info__list">
+									<li class="info__elem">
+										<span class="info__elem__title">Category:</span>
+										<span class="info__elem__name">Hear Transplant</span>
+									</li>
+									<li class="info__elem">
+										<span class="info__elem__title">Country:</span>
+										<span class="info__elem__name">Turkey</span>
+									</li>
+								</ul>
+								<p class="info__total">
+									<span class="info__total__title">Total</span>
+									<span class="info__total__price">1000</span>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Popup -->
+			<div class="main-container">
+				<div class="content">
+					<div class="form">
+						<div class="form__container">
+							<div class="progress">
+								<div class="progress__nav">
+									<button class="prev-btn">Back</button>
+									<div class="numeric-slide">
+										<span class="numeric-slide__current">3</span>
+										/
+										<span class="numeric-slide__total">16</span>
+									</div>
+								</div>
+								<div class="progress__bar"></div>
+							</div>
+							<h3 class="form__subtitle">Please choose your treatment</h3>
+							<div class="btn__list">
+								<a class="main__btn">
+									<span class="main__btn-name">FUE — Team</span>
+									<span class="main__btn-price">1050$</span>
+								</a>
+								<a class="main__btn"
+									><span class="main__btn-name">FUE — Team</span>
+									<span class="main__btn-price">1050$</span>
+								</a>
+								<a class="main__btn">
+									<span class="main__btn-name">FUE — Team</span>
+									<span class="main__btn-price">1050$</span>
+								</a>
+							</div>
+
+							<button class="next-btn">Continue without extras</button>
+						</div>
+					</div>
+					<div class="left-section">
+						<div class="info">
+							<div class="info__container">
+								<ul class="info__list">
+									<li class="info__elem">
+										<span class="info__elem__title">Category:</span>
+										<span class="info__elem__name">Hear Transplant</span>
+									</li>
+									<li class="info__elem">
+										<span class="info__elem__title">Country:</span>
+										<span class="info__elem__name">Turkey</span>
+									</li>
+								</ul>
+								<p class="info__total">
+									<span class="info__total__title">Total</span>
+									<span class="info__total__price">1000</span>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="popup">
+					<div class="popup__content">
+						<h2 class="popup-title popup-title--blue">
+							Please contact Tourismo for other room types
+						</h2>
+						<button class="next-btn">I understood, close</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Please Choose number of stars: -->
+			<div class="main-container">
+				<div class="content">
+					<div class="form">
+						<div class="form__container">
+							<div class="progress">
+								<div class="progress__nav">
+									<button class="prev-btn">Back</button>
+									<div class="numeric-slide">
+										<span class="numeric-slide__current">3</span>
+										/
+										<span class="numeric-slide__total">16</span>
+									</div>
+								</div>
+								<div class="progress__bar"></div>
+							</div>
+							<h3 class="form__subtitle">Please Choose number of stars:</h3>
+							<div class="btn__list">
+								<a class="main__btn"> 4 Stars </a>
+								<a class="main__btn"> 4 Stars </a>
+								<a class="main__btn"> 4 Stars </a>
+							</div>
+						</div>
+					</div>
+					<div class="left-section">
+						<div class="info">
+							<div class="info__container">
+								<ul class="info__list">
+									<li class="info__elem">
+										<span class="info__elem__title">Category:</span>
+										<span class="info__elem__name">Hear Transplant</span>
+									</li>
+									<li class="info__elem">
+										<span class="info__elem__title">Country:</span>
+										<span class="info__elem__name">Turkey</span>
+									</li>
+								</ul>
+								<p class="info__total">
+									<span class="info__total__title">Total</span>
+									<span class="info__total__price">1000</span>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Please Choose Hotel: -->
+			<div class="main-container">
+				<div class="content">
+					<div class="form">
+						<div class="form__container">
+							<div class="progress">
+								<div class="progress__nav">
+									<button class="prev-btn">Back</button>
+									<div class="numeric-slide">
+										<span class="numeric-slide__current">3</span>
+										/
+										<span class="numeric-slide__total">16</span>
+									</div>
+								</div>
+								<div class="progress__bar"></div>
+							</div>
+							<h3 class="form__subtitle">Please Choose Hotel:</h3>
+							<div class="btn__list">
+								<a href="" class="main__btn main__btn--img"
+									><img src="@img/hotel-1.jpg" alt="" />
+									<div class="main__btn-descr">
+										<span class="main__btn-name">FUE — Team</span>
+										<span class="main__btn-price">1050$</span>
+									</div></a
+								>
+								<a href="" class="main__btn main__btn--img"
+									><img src="@img/hotel-1.jpg" alt="" />
+									<div class="main__btn-descr">
+										<span class="main__btn-name">FUE — Team</span>
+										<span class="main__btn-price">1050$</span>
+										<span class="rating">
+											<img src="@img/Star.svg" alt="" />
+											<img src="@img/Star.svg" alt="" />
+											<img src="@img/Star.svg" alt="" />
+											<img src="@img/Star.svg" alt="" />
+										</span></div
+								></a>
+								<a href="" class="main__btn main__btn--img"
+									><img src="@img/hotel-1.jpg" alt="" />
+									<div class="main__btn-descr">
+										<span class="main__btn-name">FUE — Team</span>
+										<span class="main__btn-price">1050$</span>
+										<span class="rating">
+											<img src="@img/Star.svg" alt="" />
+										</span>
+									</div>
+								</a>
+								<a href="" class="main__btn main__btn--img"
+									><img src="@img/hotel-1.jpg" alt="" />
+									<div class="main__btn-descr">
+										<span class="main__btn-name">FUE — Team</span>
+										<span class="main__btn-price">1050$</span>
+									</div></a
+								>
+							</div>
+						</div>
+					</div>
+					<div class="left-section">
+						<div class="info">
+							<div class="info__container">
+								<ul class="info__list">
+									<li class="info__elem">
+										<span class="info__elem__title">Category:</span>
+										<span class="info__elem__name">Hear Transplant</span>
+									</li>
+									<li class="info__elem">
+										<span class="info__elem__title">Country:</span>
+										<span class="info__elem__name">Turkey</span>
+									</li>
+								</ul>
+								<p class="info__total">
+									<span class="info__total__title">Total</span>
+									<span class="info__total__price">1000</span>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="main-container">
+				<div class="content">
+					<div class="form">
+						<div class="form__container">
+							<div class="progress">
+								<div class="progress__nav">
+									<button class="prev-btn">Back</button>
+									<div class="numeric-slide">
+										<span class="numeric-slide__current">3</span>
+										/
+										<span class="numeric-slide__total">16</span>
+									</div>
+								</div>
+								<div class="progress__bar"></div>
+							</div>
+							<div class="nights">
+								<h3 class="form__subtitle nights__subtitle">How many nights?</h3>
+								<button class="nights__btn" @click="nightCollapse=!nightCollapse">
+									{{nights}} Nights
+								</button>
+								<ul class="currency__list currency__list-nights" :class="{ show: nightCollapse }">
+									<li class="currency__list-item" @click="nights=1;nightCollapse=!nightCollapse">
+										1 nights
+									</li>
+									<li class="currency__list-item" @click="nights=2;nightCollapse=!nightCollapse">
+										2 nights
+									</li>
+								</ul>
+							</div>
+
+							<button class="continue">Continue</button>
+						</div>
+					</div>
+					<div class="left-section">
+						<div class="info">
+							<div class="info__container">
+								<ul class="info__list">
+									<li class="info__elem">
+										<span class="info__elem__title">Category:</span>
+										<span class="info__elem__name">Hear Transplant</span>
+									</li>
+									<li class="info__elem">
+										<span class="info__elem__title">Country:</span>
+										<span class="info__elem__name">Turkey</span>
+									</li>
+								</ul>
+								<p class="info__total">
+									<span class="info__total__title">Total</span>
+									<span class="info__total__price">1000</span>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Popup -->
+			<div class="main-container">
+				<div class="content">
+					<div class="form">
+						<div class="form__container">
+							<div class="progress">
+								<div class="progress__nav">
+									<button class="prev-btn">Back</button>
+									<div class="numeric-slide">
+										<span class="numeric-slide__current">3</span>
+										/
+										<span class="numeric-slide__total">16</span>
+									</div>
+								</div>
+								<div class="progress__bar"></div>
+							</div>
+							<h3 class="form__subtitle">Please choose your treatment</h3>
+							<div class="btn__list">
+								<a href="" class="main__btn"
+									><span class="main__btn-name">FUE — Team</span>
+									<span class="main__btn-price">1050$</span></a
+								>
+								<a href="" class="main__btn"
+									><span class="main__btn-name">DHI — team</span>
+									<span class="main__btn-price">1230$</span></a
+								>
+							</div>
+
+							<button class="next-btn">Continue without extras</button>
+						</div>
+					</div>
+					<div class="left-section">
+						<div class="info">
+							<div class="info__container">
+								<ul class="info__list">
+									<li class="info__elem">
+										<span class="info__elem__title">Category:</span>
+										<span class="info__elem__name">Hear Transplant</span>
+									</li>
+									<li class="info__elem">
+										<span class="info__elem__title">Country:</span>
+										<span class="info__elem__name">Turkey</span>
+									</li>
+								</ul>
+								<p class="info__total">
+									<span class="info__total__title">Total</span>
+									<span class="info__total__price">1000</span>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="popup">
+					<div class="popup__content">
+						<h2 class="popup-title">
+							Please note that the minumum treatment time for this customer is:
+							<span class="popup-title__span">7 days</span>
+						</h2>
+						<p class="popup-desc">
+							Are you sure you wish to continue with your selection:
+							<span class="popup-desc__span">4 nights</span> ?
+						</p>
+						<div class="btn__list">
+							<a href="" class="main__btn">Yes</a>
+							<a href="" class="main__btn">No</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Need Another Room? -->
+			<div class="main-container">
+				<div class="content">
+					<div class="form">
+						<div class="form__container">
+							<div class="progress">
+								<div class="progress__nav">
+									<button class="prev-btn">Back</button>
+									<div class="numeric-slide">
+										<span class="numeric-slide__current">3</span>
+										/
+										<span class="numeric-slide__total">16</span>
+									</div>
+								</div>
+								<div class="progress__bar"></div>
+							</div>
+							<h3 class="form__subtitle">Need Another Room??</h3>
+							<div class="btn__list">
+								<a href="" class="main__btn">Yes</a>
+								<a href="" class="main__btn">No</a>
+							</div>
+						</div>
+					</div>
+					<div class="left-section">
+						<div class="info">
+							<div class="info__container">
+								<ul class="info__list">
+									<li class="info__elem">
+										<span class="info__elem__title">Category:</span>
+										<span class="info__elem__name">Hear Transplant</span>
+									</li>
+									<li class="info__elem">
+										<span class="info__elem__title">Country:</span>
+										<span class="info__elem__name">Turkey</span>
+									</li>
+								</ul>
+								<p class="info__total">
+									<span class="info__total__title">Total</span>
+									<span class="info__total__price">1000</span>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Transportation? -->
+			<div class="main-container">
+				<div class="content">
+					<div class="form">
+						<div class="form__container">
+							<div class="progress">
+								<div class="progress__nav">
+									<button class="prev-btn">Back</button>
+									<div class="numeric-slide">
+										<span class="numeric-slide__current">3</span>
+										/
+										<span class="numeric-slide__total">16</span>
+									</div>
+								</div>
+								<div class="progress__bar"></div>
+							</div>
+							<h3 class="form__subtitle">Transportation?</h3>
+							<div class="btn__list">
+								<a href="" class="main__btn">Yes</a>
+								<a href="" class="main__btn">No</a>
+							</div>
+						</div>
+					</div>
+					<div class="left-section">
+						<div class="info">
+							<div class="info__container">
+								<ul class="info__list">
+									<li class="info__elem">
+										<span class="info__elem__title">Category:</span>
+										<span class="info__elem__name">Hear Transplant</span>
+									</li>
+									<li class="info__elem">
+										<span class="info__elem__title">Country:</span>
+										<span class="info__elem__name">Turkey</span>
+									</li>
+								</ul>
+								<p class="info__total">
+									<span class="info__total__title">Total</span>
+									<span class="info__total__price">1000</span>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="main-container">
+				<div class="content">
+					<div class="form">
+						<div class="form__container">
+							<div class="progress">
+								<div class="progress__nav">
+									<button class="prev-btn">Back</button>
+									<div class="numeric-slide">
+										<span class="numeric-slide__current">3</span>
+										/
+										<span class="numeric-slide__total">16</span>
+									</div>
+								</div>
+								<div class="progress__bar"></div>
+							</div>
+							<h3 class="form__subtitle">Transportation?</h3>
+							<div class="btn__list">
+								<a href="" class="main__btn">
+									<span class="main__btn-name">Dr. channel Opening</span>
+									<span class="main__btn-price">1050$</span>
+								</a>
+
+								<a href="" class="main__btn">
+									<span class="main__btn-name">Dr. channel Opening</span>
+									<span class="main__btn-price">1050$</span>
+								</a>
+								<a href="" class="main__btn">
+									<span class="main__btn-name">Dr. channel Opening</span>
+									<span class="main__btn-price">1050$</span>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="left-section">
+						<div class="info">
+							<div class="info__container">
+								<ul class="info__list">
+									<li class="info__elem">
+										<span class="info__elem__title">Category:</span>
+										<span class="info__elem__name">Hear Transplant</span>
+									</li>
+									<li class="info__elem">
+										<span class="info__elem__title">Country:</span>
+										<span class="info__elem__name">Turkey</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Please Choose Room Type: -->
+			<div class="main-container">
+				<div class="content">
+					<div class="form">
+						<div class="form__container">
+							<div class="progress">
+								<div class="progress__nav">
+									<button class="prev-btn">Back</button>
+									<div class="numeric-slide">
+										<span class="numeric-slide__current">3</span>
+										/
+										<span class="numeric-slide__total">16</span>
+									</div>
+								</div>
+								<div class="progress__bar"></div>
+							</div>
+							<h3 class="form__subtitle">Anything else?</h3>
+							<div class="btn__list">
+								<a class="main__btn main__btn--big">SPA</a>
+								<a class="main__btn main__btn--big">SPA</a>
+								<a class="main__btn main__btn--big">SPA</a>
+								<a class="main__btn main__btn--big">SPA</a>
+							</div>
+							<button class="next-btn">No, Thanks</button>
+						</div>
+					</div>
+					<div class="left-section">
+						<div class="info">
+							<div class="info__container">
+								<ul class="info__list">
+									<li class="info__elem">
+										<span class="info__elem__title">Category:</span>
+										<span class="info__elem__name">Hear Transplant</span>
+									</li>
+									<li class="info__elem">
+										<span class="info__elem__title">Country:</span>
+										<span class="info__elem__name">Turkey</span>
+									</li>
+								</ul>
+								<p class="info__total">
+									<span class="info__total__title">Total</span>
+									<span class="info__total__price">1000</span>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="main-container">
+				<div class="content">
+					<div class="form">
+						<div class="form-main__container">
+							<h2 class="form__title form__title--last">Your total is:</h2>
+							<div class="left-section">
+								<div class="info">
+									<div class="info__container">
+										<ul class="info__list info__list--last">
+											<li class="info__elem">
+												<span class="info__elem__title">Category:</span>
+												<span class="info__elem__name">Hear Transplant</span>
+											</li>
+											<li class="info__elem">
+												<span class="info__elem__title">Country:</span>
+												<span class="info__elem__name">Turkey</span>
+											</li>
+										</ul>
+										<p class="info__total info__total--last">
+											<span class="info__total__title">Total</span>
+											<span class="info__total__price">1000</span>
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="btn__list">
+								<a class="main__btn main__btn--small"> Generate PDF </a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
